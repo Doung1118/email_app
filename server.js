@@ -4,21 +4,28 @@ const bodyParser = require('body-parser');
 
 const nodemailer = require('nodemailer');
 
+
 const cors = require('cors');
+
+
 
 const path = require('path');
 
 const app = express();
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 5000;
+
 
 //build static here // 
 app.use(express.static(path.join(__dirname, 'client/build')));
+
+
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
 
 //static build here //
 app.get('/*', function (req, res) {
@@ -42,9 +49,13 @@ app.post('/api/forma', (req, res) => {
 
 
   app.listen(PORT, () => {
+    console.log('listening on *:5000')
     console.log("hi")
     console.log(`server starting at port${PORT}`);
   })
+
+
+
 
 
 
@@ -67,6 +78,7 @@ app.post('/api/forma', (req, res) => {
     `
   };
 
+
   smtpTransport.sendMail(mailOptions, (error, response) => {
 
     if (error) {
@@ -76,7 +88,27 @@ app.post('/api/forma', (req, res) => {
     else {
 
       res.send('success')
+
     }
+
   })
+
+
   smtpTransport.close();
+
+
 })
+
+
+
+
+
+
+
+
+// const PORT = process.env.PORT || 300;
+
+// app.listen(PORT, () => {
+
+//   console.log(`server starting at port ${PORT}`);
+// })
