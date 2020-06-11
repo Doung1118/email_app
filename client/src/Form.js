@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 import axios from 'axios';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-//53:00
+
 
 export default class Form extends Component {
 
-  // 40:21
+
 
   state = {
     name: '',
@@ -26,10 +26,7 @@ export default class Form extends Component {
     })
   }
 
-  // setState is change  "state of content "//
-  //this 是指component 
 
-  //end of handle inputs 
 
   handleEmail = (e) => {
     this.setState({
