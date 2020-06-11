@@ -4,28 +4,21 @@ const bodyParser = require('body-parser');
 
 const nodemailer = require('nodemailer');
 
-
 const cors = require('cors');
-
-
 
 const path = require('path');
 
 const app = express();
 
-const PORT = process.env.PORT || 80;
-
+const PORT = process.env.PORT || 8080;
 
 //build static here // 
 app.use(express.static(path.join(__dirname, 'client/build')));
-
-
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-
 
 //static build here //
 app.get('/*', function (req, res) {
@@ -55,9 +48,6 @@ app.post('/api/forma', (req, res) => {
 
 
 
-
-
-
   let mailOptions = {
     from: data.email,
     to: 'doung1118@gmail.com',
@@ -76,7 +66,6 @@ app.post('/api/forma', (req, res) => {
 
     `
   };
-
 
   smtpTransport.sendMail(mailOptions, (error, response) => {
 
