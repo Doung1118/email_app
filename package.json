@@ -1,5 +1,5 @@
 {
-  "name": "email_build",
+  "name": "dad-jokes-app",
   "version": "1.0.0",
   "description": "form",
   "main": "server.js",
@@ -20,6 +20,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "nodemailer": "^6.4.8",
-    "nodemon": "^2.0.4"
+    "puppeteer": "^3.3.0"
   }
 }

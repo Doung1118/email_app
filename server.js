@@ -6,6 +6,7 @@ const nodemailer = require('nodemailer');
 
 
 const cors = require('cors');
+// what is this never ??????????// 
 
 
 const path = require('path');
@@ -18,6 +19,8 @@ const PORT = process.env.PORT || 8080;
 //build static here // 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+
+
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,8 +32,6 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 
 });
-
-
 
 app.post('/api/forma', (req, res) => {
 
@@ -47,11 +48,13 @@ app.post('/api/forma', (req, res) => {
   });
 
 
-
   app.listen(PORT, () => {
     console.log("hi")
     console.log(`server starting at port${PORT}`);
   })
+
+
+
 
 
 
@@ -84,17 +87,7 @@ app.post('/api/forma', (req, res) => {
     else {
 
       res.send('success')
-
     }
-
   })
-
-
   smtpTransport.close();
-
-
 })
-
-
-
-
