@@ -16,6 +16,7 @@ export default class Form extends Component {
     sent: false
   }
 
+
   //handle inputs
   handleName = (e) => {
     console.log(e.target.value);
