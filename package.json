@@ -22,7 +22,7 @@
     "chalk": "^4.1.0",
     "concurrently": "^5.2.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nodemailer": "^6.4.8",
     "puppeteer": "^3.3.0"
   }
